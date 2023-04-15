@@ -1,0 +1,44 @@
+{
+  "name": "bwein-net/deployer-recipes",
+  "description": "bwein deployer recipes",
+  "keywords": [
+    "deployer",
+    "recipes",
+    "deploy",
+    "deployment",
+    "contao",
+    "gitlab-ci",
+    "tar",
+    "scp"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "bwein.net",
+      "homepage": "https://bwein.net/",
+      "role": "Developer"
+    },
+    {
+      "name": "Ralf Baussenwein",
+      "homepage": "https://github.com/rabauss",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=8.1"
+  },
+  "require-dev": {
+    "deployer/deployer": "^7.1",
+    "symplify/easy-coding-standard": "^11.0"
+  },
+  "autoload": {
+    "files": [
+      "autoload.php"
+    ]
+  },
+  "scripts": {
+    "ecs": [
+      "@php vendor/bin/ecs check --fix --ansi"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+name: bwein-deployer-recipes
+
+services:
+    appserver:
+        type: php:8.1
+        via: cli
+        overrides:
+            extra_hosts:
+                - ${LANDO_HOST_IP_DEV:-host}:host-gateway
+            environment:
+                PHP_IDE_CONFIG: "serverName=lando"
+                COMPOSER_CACHE_DIR: "/lando/composer_cache"
+                XDEBUG_SESSION_START: lando
+tooling:
+    composer:
+        service: appserver
+        cmd: composer
+
+    ecs:
+        service: appserver
+        cmd: composer ecs
